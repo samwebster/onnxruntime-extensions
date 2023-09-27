@@ -7,7 +7,7 @@ parameters:
 jobs:
 - job: windows
   timeoutInMinutes: 120
-  pool: {name: 'onnxruntime-Win-CPU-2022'}
+  pool: ASGEurope_hosted_win2022_D2adsv5
   variables:
     CIBW_BUILD: "cp3{8,9,10,11}-*amd64"
     CIBW_ENVIRONMENT: "${{ parameters.ExtraEnv }}"
