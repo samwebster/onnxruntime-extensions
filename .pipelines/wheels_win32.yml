@@ -7,7 +7,7 @@ parameters:
 jobs:
 - job: windows
   timeoutInMinutes: 120
-  pool: ASGEurope_hosted_win2022_D2adsv5
+  pool: ASGEurope_hosted_win2022_D16adsv5
   variables:
     CIBW_BUILD: "cp3{8,9,10,11}-*amd64"
     CIBW_ENVIRONMENT: "${{ parameters.ExtraEnv }}"
