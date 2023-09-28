@@ -462,6 +462,7 @@ stages:
       displayName: Run python test
 
 - stage: WebAssemblyBuilds
+  condition: false
   dependsOn: []
   jobs:
 
@@ -491,6 +492,7 @@ stages:
     # TODO add unittest for webassembly
 
 - stage: AndroidBuilds
+  condition: false
   dependsOn: []
   jobs:
 
@@ -582,6 +584,7 @@ stages:
             displayName: Build onnxruntime-extensions for Android and run C++ tests on emulator
 
 - stage: IosBuilds
+  condition: false
   dependsOn: []
   jobs:
 
