@@ -20,7 +20,8 @@ stages:
   # Linux
   #######
   - job: Linux
-    pool:
+    condition: false
+    pool: 
       vmImage: 'ubuntu-latest'
 
     strategy:
@@ -300,6 +301,7 @@ stages:
   # Windows C++
   #########
   - job: WindowsC
+    condition: false
     pool:
       vmImage: 'windows-latest'
 
