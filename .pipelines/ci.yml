@@ -13,6 +13,7 @@
 stages:
 
 - stage: LinuxBuilds
+  condition: false
   dependsOn: []
   jobs:
 
@@ -20,7 +21,6 @@ stages:
   # Linux
   #######
   - job: Linux
-    condition: false
     pool: 
       vmImage: 'ubuntu-latest'
 
