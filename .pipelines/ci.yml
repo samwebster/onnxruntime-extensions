@@ -45,7 +45,6 @@ stages:
     steps:
     - task: DownloadGitHubRelease@0
       inputs:
-        connection: 'microsoft'
         userRepository: 'microsoft/onnxruntime'
         defaultVersionType: 'specificTag'
         version: 'v$(ort.version)'
