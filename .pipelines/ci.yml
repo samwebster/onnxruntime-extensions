@@ -173,6 +173,7 @@ stages:
       displayName: Build ort-extensions with only one operator was selected
 
 - stage: MacOSBuilds
+  condition: false
   dependsOn: []
   jobs:
 
@@ -207,7 +208,6 @@ stages:
 
     - task: DownloadGitHubRelease@0
       inputs:
-        connection: 'microsoft'
         userRepository: 'microsoft/onnxruntime'
         defaultVersionType: 'specificTag'
         version: 'v$(ort.version)'
@@ -317,7 +317,6 @@ stages:
     steps:
     - task: DownloadGitHubRelease@0
       inputs:
-        connection: 'microsoft'
         userRepository: 'microsoft/onnxruntime'
         defaultVersionType: 'specificTag'
         version: 'v$(ort.version)'
