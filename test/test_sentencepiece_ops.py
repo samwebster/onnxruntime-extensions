@@ -433,7 +433,7 @@ class TestPythonOpSentencePiece(unittest.TestCase):
                             alpha=np.array([alpha], dtype=np.float32),
                             add_bos=np.array([bools & 1], dtype=np.bool_),
                             add_eos=np.array([bools & 2], dtype=np.bool_),
-                            reverse=np.array([bools & 4], dtype=np.bool_))
+                            reverse=np.array([False], dtype=np.bool_))
                         exp = self.SentencepieceTokenizer(**inputs)
                         py_txout = py_sess.run(None, inputs)
                         del inputs['model']
@@ -513,7 +513,7 @@ class TestOrtXSentencePiece(unittest.TestCase):
         alpha = 0
         nbest_size = 0
         flags = 0
-        tokens, indices = ofunc(
+        tokens, instance_indices, token_indices = ofunc(
             np.array(['best hotel in bay area.']),
             np.array(
                 [nbest_size], dtype=np.int64),
