@@ -54,9 +54,13 @@ void KernelSentencepieceTokenizer::Compute(const ortc::Tensor<std::string>& inpu
         content.push_back(tokenizer_.eos_id());
         token_indices.push_back(str_input[i].length());
       }
-      for (const auto& sp : spt.pieces()) {
-        content.push_back(sp.id());
-        token_indices.push_back(sp.begin());
+      const auto& pieces = spt.pieces();
+      /*for (auto it = my_vector.rbegin(); it != my_vector.rend(); ++it)
+      {
+      }*/
+      for (int i = pieces.size() - 1; i <= 0; i--) {
+        content.push_back(pieces[i].id());
+        token_indices.push_back(pieces[i].begin());
       }
       if (add_bos) {
         content.push_back(tokenizer_.bos_id());
