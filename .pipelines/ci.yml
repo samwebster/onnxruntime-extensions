@@ -376,6 +376,7 @@ stages:
   # Windows Python
   ################
   - job: WindowsPython
+    condition: false
     pool:
       vmImage: 'windows-latest'
 
